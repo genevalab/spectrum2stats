@@ -1,7 +1,13 @@
 #' Tajima's D
 #'
 #' This function takes an unfolded site frequency spectrum and returns Tajima's D
+#'
 #' @param sfs The unfolded site frequency spectrum
+#'
+#' @references
+#' Tajima, F. 1989. Statistical method for testing the neutral mutation hypothesis 
+#' by DNA polymorphism. Genetics. 123:585-595.
+#'
 #' @keywords sfs TD Tajima's D
 #' @export
 #' @examples

@@ -10,8 +10,11 @@
 #'
 #' @references
 #' McDonald, J., and M. Kreitman. 1991. Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652–654.
-#' Eyre-Walker DoS
-#' Smith and Eyre Walker alpha
+#' Charlesworth B. 1993. The effect of background selection against deleterious mutations on weakly selected, linked variants. Genetic Research 63:213-227.
+#' Rand DM, Kann A. 1996. Polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Molecular Biology and Evolution 13:735-748.
+#' Stoletzki, N and Eyre-Walker, A. 2011. Estimation of the Neutrality Index. Molecular Biology and Evolution 28(1):63-70.
+
+
 #' @keywords sfs alpha
 #' @export
 #' @examples
@@ -36,13 +39,11 @@ mk_sfs <- function(sel, neut){
   pn <- round(sum(sel[1:(x-1)]))
   ps <- round(sum(neut[1:(x-1)]))
 
-  alpha <- 1 - ((neut[x]*sel[1:(x-1)])/ (sel[x]*neut[1:(x-1)]))
+  alpha <- 1 - (ds*pn)/(dn*ps)
+  ni <- (ds*pn)/(dn*ps)
+  DoS <- dn/(dn+ds) - pn/(pn+ps)
 
   mk.test <-
-
-  ni <-
-
-  DoS <-
 
   result <- data.frame("MK.test" = mk.test, "neutrality.index" = ni ,"alpha" = alpha ,"DoS" = DoS)
   return(result)

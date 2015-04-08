@@ -1,7 +1,13 @@
 #' Fay and Wu's H
 #'
 #' This function takes an unfolded site frequency spectrum and returns Fay and Wu's H
+#'
 #' @param sfs The unfolded site frequency spectrum
+#'
+#' @references
+#' Fay, JC and Wu, CI. 2000. Hitchiking under positive Darwinian selection. 
+#' Genetics. 155:1405-1413 
+#'
 #' @keywords sfs FWH
 #' @export
 #' @examples

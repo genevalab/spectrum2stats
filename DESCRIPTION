@@ -2,7 +2,7 @@ Package: spectrum2stats
 Title: Calculate Population Genetic Summary Stats using Site Frequency Spectra
 Version: 0.0.1
 Authors@R: c(person("Anthony", "Geneva", "J", email = "anthony.geneva@gmail.com", role = c("aut", "cre")),
-  person("Sarah", "Kingan", email = "sarah.kingan@rochester.edu", role = c("aut", "cre")))
+  person("Sarah", "Kingan", "B", email = "sarah.kingan@rochester.edu", role = c("aut", "cre")))
 Description: The functions in this package allow users to read site frequency spectra and perform a variety of population genetic analyses.
 Depends: R (>= 3.1.1)
 License: What license is it under?
