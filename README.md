@@ -19,4 +19,4 @@ library(spectrum2stats)
 This package implements methods developed by a number of authors whose work should be cited when using spectrum2stats. See the help pages of individual functions for appropriate citations.
 
 The citation and  DOI number for spectrum2stats  is:   
-  * Geneva, AJ and SB Kingan (2015): spectrum2stats: An R package for population genetic analysis of site frequency spectra. figshare. _doi coming soon_
+  * Geneva, AJ and SB Kingan (2015): spectrum2stats v0.0.1: An R package for population genetic analysis of site frequency spectra. http://doi.org/10.5281/zenodo.16688
