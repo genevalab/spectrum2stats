@@ -25,11 +25,11 @@ mk_sfs(colSums(sel), colSums(neut)) #perform MK test on sum of all genes
 mk_sfs(sel[,1], neut[,1]) #perform MK test on single genes
 }
 \references{
-McDonald, J., and M. Kreitman. 1991. Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652–654.
+McDonald, J and M Kreitman. 1991. Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652–654.
 
 Charlesworth B. 1993. The effect of background selection against deleterious mutations on weakly selected, linked variants. Genetic Research 63:213-227.
 
-Rand DM, Kann A. 1996. Polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Molecular Biology and Evolution 13:735-748.
+Rand DM and Kann A. 1996. Polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Molecular Biology and Evolution 13:735-748.
 
 Stoletzki, N and Eyre-Walker, A. 2011. Estimation of the Neutrality Index. Molecular Biology and Evolution 28(1):63-70.
 }
