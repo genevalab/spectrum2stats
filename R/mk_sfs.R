@@ -10,8 +10,11 @@
 #'
 #' @references
 #' McDonald, J., and M. Kreitman. 1991. Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652–654.
+#'
 #' Charlesworth B. 1993. The effect of background selection against deleterious mutations on weakly selected, linked variants. Genetic Research 63:213-227.
+#'
 #' Rand DM, Kann A. 1996. Polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Molecular Biology and Evolution 13:735-748.
+#'
 #' Stoletzki, N and Eyre-Walker, A. 2011. Estimation of the Neutrality Index. Molecular Biology and Evolution 28(1):63-70.
 
 
@@ -43,10 +46,6 @@ mk_sfs <- function(sel, neut){
 
   mk.tab <- data.frame(matrix(c(c(ds,dn),c(ps,pn)), ncol=2))
   mk.t <- fisher.test(mk.tab)
-  if (is.na(alpha)){
-    mk.t$p.value <- NA
-    mk.t$estimate <- NA
-  }
 
   mk.test <- list("table" = mk.tab, "p.value" = mk.t$p.value, "odds.ratio" = mk.t$estimate)
   result <- list("MK.test" = mk.test, "neutrality.index" = ni ,"alpha" = alpha ,"DoS" = DoS)
