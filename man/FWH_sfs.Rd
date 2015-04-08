@@ -15,6 +15,10 @@ This function takes an unfolded site frequency spectrum and returns Fay and Wu's
 \examples{
 FWH_sfs(sfs)
 }
+\references{
+Fay, JC and Wu, CI. 2000. Hitchiking under positive Darwinian selection.
+Genetics. 155:1405-1413
+}
 \keyword{FWH}
 \keyword{sfs}
 
