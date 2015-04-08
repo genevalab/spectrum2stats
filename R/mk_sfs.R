@@ -1,12 +1,12 @@
 #' McDonald-Kreitman test
 #'
-#' This function performs uses site frequency spectra to create a four
+#' This function uses site frequency spectra to create a four
 #' cell contingency table of fixed and segregating, selected and neutral
 #' sites. This table is used to perform a McDonald-Kreitman test, and
-#' caculate summaries (alpha, DoS)
+#' caculate summaries (neutrality index, alpha, DoS)
 #'
-#' @param sel The unfolded site frequency spectrum for selected sites
-#' @param neut The unfolded site frequency spectrum for neutral sites
+#' @param sel A vector containing the unfolded site frequency spectrum for selected sites
+#' @param neut A vector containing the  unfolded site frequency spectrum for neutral sites
 #'
 #' @references
 #' McDonald, J., and M. Kreitman. 1991. Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652–654.
@@ -19,33 +19,33 @@
 #' @export
 #' @examples
 #' data(spectrum2stats)
-#' mk_sfs(sel, neut)
+#'
+#' mk_sfs(colSums(sel), colSums(neut)) #perform MK test on sum of all genes
+#'
+#' mk_sfs(sel[,1], neut[,1]) #perform MK test on single genes
 
 
 mk_sfs <- function(sel, neut){
-  if(nrow(sel)!=nrow(neut) & ncol(sel)!=ncol(neut)){
-    cat("Neutral and Selected SFS are unequally sized")
+  if(length(sel)!=length(neut)){
+    cat("Error: Neutral and Selected objects are unequally sized")
     break
   }
 
-  if(nrow(sel)>1){
-    sel <- colSums(sel)
-    neut <- colSums(neut)
-  }
-
   length(sel) -> x
-  dn <- round(sel[x])
-  ds <- round(neut[x])
-  pn <- round(sum(sel[1:(x-1)]))
-  ps <- round(sum(neut[1:(x-1)]))
+  dn <- round(sel[x])[[1]]
+  ds <- round(neut[x])[[1]]
+  pn <- round(sum(sel[1:(x-1)]))[[1]]
+  ps <- round(sum(neut[1:(x-1)]))[[1]]
 
   alpha <- 1 - (ds*pn)/(dn*ps)
   ni <- (ds*pn)/(dn*ps)
   DoS <- dn/(dn+ds) - pn/(pn+ps)
 
-  mk.test <-
+  mk.tab <- data.frame(matrix(c(c(ds,dn),c(ps,pn)), ncol=2))
+  mk.t <- fisher.test(mk.tab)
 
-  result <- data.frame("MK.test" = mk.test, "neutrality.index" = ni ,"alpha" = alpha ,"DoS" = DoS)
+  mk.test <- list("table" = mk.tab, "p.value" = mk.t$p.value, "odds.ratio" = mk.t$estimate)
+  result <- list("MK.test" = mk.test, "neutrality.index" = ni ,"alpha" = alpha ,"DoS" = DoS)
   return(result)
 }
 
