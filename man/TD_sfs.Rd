@@ -15,6 +15,10 @@ This function takes an unfolded site frequency spectrum and returns Tajima's D
 \examples{
 TD_sfs(sfs)
 }
+\references{
+Tajima, F. 1989. Statistical method for testing the neutral mutation hypothesis
+by DNA polymorphism. Genetics. 123:585-595.
+}
 \keyword{D}
 \keyword{TD}
 \keyword{Tajima's}

@@ -7,24 +7,28 @@
 mk_sfs(sel, neut)
 }
 \arguments{
-\item{sel}{The unfolded site frequency spectrum for selected sites}
+\item{sel}{A vector containing the unfolded site frequency spectrum for selected sites}
 
-\item{neut}{The unfolded site frequency spectrum for neutral sites}
+\item{neut}{A vector containing the  unfolded site frequency spectrum for neutral sites}
 }
 \description{
-This function performs uses site frequency spectra to create a four
+This function uses site frequency spectra to create a four
 cell contingency table of fixed and segregating, selected and neutral
 sites. This table is used to perform a McDonald-Kreitman test, and
-caculate summaries (alpha, DoS)
+caculate summaries (neutrality index, alpha, DoS)
 }
 \examples{
 data(spectrum2stats)
-mk_sfs(sel, neut)
+
+mk_sfs(colSums(sel), colSums(neut)) #perform MK test on sum of all genes
+
+mk_sfs(sel[,1], neut[,1]) #perform MK test on single genes
 }
 \references{
 McDonald, J., and M. Kreitman. 1991. Adaptive protein evolution at the Adh locus in Drosophila. Nature 351:652–654.
-Eyre-Walker DoS
-Smith and Eyre Walker alpha
+Charlesworth B. 1993. The effect of background selection against deleterious mutations on weakly selected, linked variants. Genetic Research 63:213-227.
+Rand DM, Kann A. 1996. Polymorphism in mitochondrial DNA: contrasts among genes from Drosophila, mice, and humans. Molecular Biology and Evolution 13:735-748.
+Stoletzki, N and Eyre-Walker, A. 2011. Estimation of the Neutrality Index. Molecular Biology and Evolution 28(1):63-70.
 }
 \keyword{alpha}
 \keyword{sfs}
