@@ -18,7 +18,7 @@ asym_alpha(sel, neut, plot = FALSE, main = "", ...)
 \item{...}{Additional graphical parameters to pass to plot()}
 }
 \description{
-This function used the asymptotic approach described by Messer & Petrov (2013)
+This function uses the asymptotic approach described by Messer & Petrov (2013)
 to estimate the population genetic paramater alpha. This function returns
 fittedalpha[0] and alpha[1] as well as an optional figure depicting
 alpha[1/n], alpha[2/n],..., alpha[n-1] and the fitted line

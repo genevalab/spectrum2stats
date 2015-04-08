@@ -4,7 +4,7 @@
 #' user specified genes from a large user supplied set, then assesses
 #' the significance of these values by perform a user-specified number
 #' of resampling replicates, drawn from the full set of genes.
-#' Operations are performed by calling the asym_alpha function.
+#' Operations are performed by calling the \code{asym_alpha} function.
 #'
 #' @param sel.sfs The unfolded site frequency spectrum for selected sites for a colletion of genes one per line
 #' @param neut.sfs The unfolded site frequency spectrum for neutral sites for a collection of genes one per line
@@ -19,6 +19,7 @@
 #' @keywords sfs alpha bootstrap
 #' @export
 #' @examples
+#' data(spectrum2stats)
 #' bootstrap_alpha(genes, sel.sfs, neut.sfs, reps=1000)
 
 

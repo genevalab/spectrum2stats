@@ -15,6 +15,7 @@
 #' @keywords sfs alpha
 #' @export
 #' @examples
+#' data(spectrum2stats)
 #' mk_sfs(sel, neut)
 
 
@@ -30,10 +31,10 @@ mk_sfs <- function(sel, neut){
   }
 
   length(sel) -> x
-  dn <- sel[x]
-  ds <- neut[x]
-  pn <- sum(sel[1:(x-1)])
-  ps <- sum(neut[1:(x-1)])
+  dn <- round(sel[x])
+  ds <- round(neut[x])
+  pn <- round(sum(sel[1:(x-1)]))
+  ps <- round(sum(neut[1:(x-1)]))
 
   alpha <- 1 - ((neut[x]*sel[1:(x-1)])/ (sel[x]*neut[1:(x-1)]))
 

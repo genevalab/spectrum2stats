@@ -18,6 +18,7 @@ sites. This table is used to perform a McDonald-Kreitman test, and
 caculate summaries (alpha, DoS)
 }
 \examples{
+data(spectrum2stats)
 mk_sfs(sel, neut)
 }
 \references{

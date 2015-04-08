@@ -22,9 +22,10 @@ This function calculates alpha_1 and alpha_0 values for a set of
 user specified genes from a large user supplied set, then assesses
 the significance of these values by perform a user-specified number
 of resampling replicates, drawn from the full set of genes.
-Operations are performed by calling the asym_alpha function.
+Operations are performed by calling the \code{asym_alpha} function.
 }
 \examples{
+data(spectrum2stats)
 bootstrap_alpha(genes, sel.sfs, neut.sfs, reps=1000)
 }
 \references{
