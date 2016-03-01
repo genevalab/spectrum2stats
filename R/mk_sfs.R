@@ -45,7 +45,7 @@ mk_sfs <- function(sel, neut){
   DoS <- dn/(dn+ds) - pn/(pn+ps)
 
   mk.tab <- data.frame(matrix(c(c(ds,dn),c(ps,pn)), ncol=2))
-  mk.t <- fisher.test(mk.tab)
+  mk.t <- fisher.test(mk.tab, alternative="less")
 
   mk.test <- list("table" = mk.tab, "p.value" = mk.t$p.value, "odds.ratio" = mk.t$estimate)
   result <- list("MK.test" = mk.test, "neutrality.index" = ni ,"alpha" = alpha ,"DoS" = DoS)
